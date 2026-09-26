@@ -2,5 +2,23 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>python-scim/renovate-config#1.0.1"
+  ],
+  "customManagers": [
+    {
+      "description": "The validation workflow runs renovate from npm with a pinned version.",
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
+      "matchStrings": ["--package (?<depName>renovate)@(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "datasourceTemplate": "npm"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "The validation workflow runs the new renovate version on the preset, so its minor and patch updates are automerged once it passes.",
+      "matchManagers": ["custom.regex"],
+      "matchDepNames": ["renovate"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
   ]
 }
