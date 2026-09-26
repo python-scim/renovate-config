@@ -44,6 +44,20 @@
       "automerge": true
     },
     {
+      "description": "This preset is ours, so its new tags skip the cooldown meant for third-party releases. Minor and major versions of the preset are adopted through a reviewed pull request in each repository.",
+      "matchManagers": ["renovate-config"],
+      "matchDepNames": ["python-scim/renovate-config"],
+      "minimumReleaseAge": null,
+      "automerge": false
+    },
+    {
+      "description": "Patch versions of the preset are automerged. Only administrators can push the tags of this repository.",
+      "matchManagers": ["renovate-config"],
+      "matchDepNames": ["python-scim/renovate-config"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
       "description": "Major updates are never grouped and never automerged: each one gets its own pull request and a human review.",
       "matchUpdateTypes": ["major"],
       "automerge": false
