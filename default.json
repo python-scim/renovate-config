@@ -64,6 +64,12 @@
       "automerge": true
     },
     {
+      "description": "uv builds the releases with its bundled backend only when its version matches the uv_build range of build-system.requires, so the uv of setup-uv, the uv container image and that range move together in one pull request.",
+      "matchPackageNames": ["astral-sh/uv", "docker.io/astral/uv", "uv-build"],
+      "groupName": "uv",
+      "automerge": true
+    },
+    {
       "description": "Major updates are never grouped and never automerged: each one gets its own pull request and a human review.",
       "matchUpdateTypes": ["major"],
       "automerge": false
