@@ -8,6 +8,7 @@
   "timezone": "Europe/Paris",
   "schedule": ["before 7am on monday"],
   "prConcurrentLimit": 5,
+  "platformAutomerge": false,
   "minimumReleaseAge": "14 days",
   "packageRules": [
     {
