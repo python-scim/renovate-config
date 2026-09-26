@@ -44,6 +44,12 @@
       "automerge": true
     },
     {
+      "description": "The python-scim packages are ours, so their new releases skip the cooldown meant for third-party releases, as uv's exclude-newer-package does in each project.",
+      "matchDatasources": ["pypi"],
+      "matchPackageNames": ["scim2-models", "scim2-client", "scim2-server", "scim2-cli", "scim2-tester", "pytest-scim2-server"],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "This preset is ours, so its new tags skip the cooldown meant for third-party releases. Minor and major versions of the preset are adopted through a reviewed pull request in each repository.",
       "matchManagers": ["renovate-config"],
       "matchDepNames": ["python-scim/renovate-config"],
